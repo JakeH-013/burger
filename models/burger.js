@@ -12,7 +12,9 @@ var burger = {
         });
     },
     updateStatus: (objColVals, condition, cb) => {
-        cb(res);
+        orm.update("burgers", objColVals, condition, (res) => {
+            cb(res);
+        })
     }
 };
 
