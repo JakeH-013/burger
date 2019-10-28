@@ -1,27 +1,29 @@
 $(() => {
     $(".change-state").on("click", (event) => {
         var id = $(this).data("id");
-        var nowDevour = $(this).data("nowDevour");
+        console.log(this)
+        console.log("THIS IS FOR TESTING: " , id)
+        // var nowDevour = $(this).data("nowDevour");
 
         var nowDevourState = {
-            devoured = nowDevour
+            devoured: 1
         };
 
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: nowDevourState
         }).then(() => {
-            console.log(nowDevour);
+            // console.log(nowDevour);
             console.log("This burger is now devoured.");
             location.reload();
         });
     });
 
-    $(".prep-form").on("submit", (event) => {
+    $(".create-form").on("submit", (event) => {
         event.preventDefault();
-
+        console.log("this is a thing")
         var newBurger = {
-            name: $("#newFood").val().trim(),
+            burger_name: $("#newFood").val().trim(),
             devoured: 0
         };
 
