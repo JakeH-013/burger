@@ -1,5 +1,5 @@
 $(() => {
-    $(".change-state").on("click", (event) => {
+    $(".change-state").on("click", function(event) {
         var id = $(this).data("id");
         console.log(this)
         console.log("THIS IS FOR TESTING: " , id)
