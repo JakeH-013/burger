@@ -19,7 +19,7 @@ $(() => {
         });
     });
 
-    $(".create-form").on("submit", (event) => {
+    $(".create-form").on("submit", function(event) {
         event.preventDefault();
         console.log("this is a thing")
         var newBurger = {
